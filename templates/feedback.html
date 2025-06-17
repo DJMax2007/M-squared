@@ -1,0 +1,43 @@
+<!DOCTYPE htmml>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="/static/feedback.css" />
+  </head>
+  <body>
+    <h2>Feedback Form</h2>
+    <form>
+      <div>
+        <label> Name: </label>
+        <input type="text" name="name" placeholder="Type Your Name" />
+      </div>
+      <div>
+        <label> Email: </label>
+        <input type="email" name="email" placeholder="your@email.com" />
+      </div>
+      <div>
+        <label> Issue Type: </label>
+        <select>
+          <option value="general">General</option>
+          <option value="complaint">Complaint</option>
+          <option value="information_request">Information Request</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label> Description: </label>
+        <textarea rows="5" placeholder="Your feedback or complaint...">
+        </textarea>
+      </div>
+      <div>
+        <label> Upload Support Documents:</label>
+        <input type="file" />
+      </div>
+      <div>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </div>
+    </form>
+  </body>
+</html>
