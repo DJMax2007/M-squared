@@ -3,41 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <title>Feedback</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/feedback.css" />
   </head>
   <body>
-    <h2>Feedback Form</h2>
-    <form>
-      <div>
-        <label> Name: </label>
-        <input type="text" name="name" placeholder="Type Your Name" />
+    <section id="main">
+      <div class="text-center py-4">
+        <h1 class="fw-bold text-dark">
+          <i class="bi bi-stars text-warning"></i>Feedback Form 
+        </h1>
+        <h3 class="text-secondary">We value your feedback and complaints</h3>
       </div>
-      <div>
-        <label> Email: </label>
-        <input type="email" name="email" placeholder="your@email.com" />
+    </section>
+    
+    <section id="content">
+      <div class="container-fluid justify-content-center d-flex align-items-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 px-2">
+          <form>
+
+            <label for="name" class="form-label pt-3">
+              Name: <span class="text-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Required">*</span> 
+            </label>
+            <div class="input-group mb-4">
+              <span class="input-group-text bg-warning"><i class="bi bi-person-fill"></i></span>
+              <input type="text" id="name" class="form-control" placeholder="Type Your Name" />
+              <span class="input-group-text bg-warning">
+                <span class="info" data-bs-placement="bottom" title="Type in your First and Last Name">
+                  <i class="bi bi-question-circle-fill"></i>
+                </span>
+              </span>
+            </div>
+
+            <label for="email" class="form-label">
+              Email: <span class="text-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Required">*</span> 
+            </label>
+            <div class="input-group mb-4">
+              <span class="input-group-text bg-warning"><i class="bi bi-envelope-fill"></i></span>
+              <input type="email" id="email" class="form-control" placeholder="your@email.com" />
+              <span class="input-group-text bg-warning">
+                <span class="info" data-bs-placement="bottom" title="Type in your email address">
+                  <i class="bi bi-question-circle-fill"></i>
+                </span>
+              </span>
+            </div>
+
+            <label for="phone" class="form-label">
+              Phone Number:  
+            </label>
+            <div class="input-group mb-4">
+              <span class="input-group-text bg-warning"><i class="bi bi-telephone-fill"></i></span>
+              <span class="input-group-text" style="background-color: white; color: black;">
+                +
+              </span>
+              <input type="tel" class="form-control" id="phone" placeholder="US e.g. 1 580 865 3456"/>
+              <span class="input-group-text bg-warning">
+                <span class="info" data-bs-placement="bottom" title="Enter your full phone number including area code">
+                  <i class="bi bi-question-circle-fill"></i>
+                </span>
+              </span>
+            </div>
+
+            <label for="issue" class="form-label">
+              Issue Type: <span class="text-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Required">*</span> 
+            </label>
+            <div class="input-group mb-4">
+              <span class="input-group-text bg-warning"><i class="bi bi-chat-left-dots-fill"></i></span>
+              <select class="form-select" id="issue">
+                <option value="general">General</option>
+                <option value="complaint">Complaint</option>
+                <option value="information_request">Information Request</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="input-group-text bg-warning">
+                <span class="info" data-bs-placement="bottom" title="Pick the type of issue you are reporting">
+                  <i class="bi bi-question-circle-fill"></i>
+                </span>
+              </span>
+            </div>
+
+            <div class="mb-4 form-floating">
+              <textarea class="form-control" id="description" style="height: 160px" rows="5" placeholder="Your feedback or complaint...">
+              </textarea>
+              <label for="description">Description: ...</label>
+            </div>
+
+            <div class="mb-4">
+              <label for="upload"><span class="form-label">Upload Support Documents:</span></label>
+              <div class="d-flex input-group">
+                <input class="form-control" type="file" id="upload">
+                <span class="input-group-text info bg-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Upload a file relevant to the issue.">
+                  <i class="bi bi-question-circle-fill"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="mb-4 text-center">
+              <input type="submit" value="Submit" class="custom-btn"/>
+              <input type="reset" value="Reset" class="custom-btn" />
+            </div>
+          </form>
+        </div>
       </div>
-      <div>
-        <label> Issue Type: </label>
-        <select>
-          <option value="general">General</option>
-          <option value="complaint">Complaint</option>
-          <option value="information_request">Information Request</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label> Description: </label>
-        <textarea rows="5" placeholder="Your feedback or complaint...">
-        </textarea>
-      </div>
-      <div>
-        <label> Upload Support Documents:</label>
-        <input type="file" />
-      </div>
-      <div>
-        <input type="submit" value="Submit" />
-        <input type="reset" value="Reset" />
-      </div>
-    </form>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
   </body>
 </html>
