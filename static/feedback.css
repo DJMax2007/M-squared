@@ -1,5 +1,5 @@
 html{
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
@@ -10,9 +10,16 @@ body {
     background-color:#F6EDB8;
 }
 
-#content {
-    background-color: #FFF9E3;
+.modal-header{
+  background-color: #F6EDB8;
 }
+
+.modal-body,
+.modal-footer {
+  border: none;
+  background-color: #FFF9E3;
+}
+
 
 .custom-btn {
   background-color: #ffc107;
