@@ -1,0 +1,39 @@
+html{
+  font-size: 16px;
+}
+
+body {
+  background-color: #FFF9E3;
+}
+
+#main {
+    background-color:#F6EDB8;
+}
+
+.modal-header{
+  background-color: #F6EDB8;
+}
+
+.modal-body,
+.modal-footer {
+  border: none;
+  background-color: #FFF9E3;
+}
+
+
+.custom-btn {
+  background-color: #ffc107;
+  color: #000;
+  border: 2px solid #ffc107;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #c99a0b;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px #ffc107;
+}
