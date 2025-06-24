@@ -84,7 +84,6 @@ def submit():
 
     print(f"Received name: {name}")
     return render_template("success.html", name=name)
-    return f" Hi {name}, your feedback has been submitted!"
 
 if __name__ == '__main__':
     app.run(debug=True)
