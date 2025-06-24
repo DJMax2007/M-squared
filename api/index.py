@@ -29,7 +29,7 @@ def send_email_notif(name, email, phone, issue, description):
     msg = EmailMessage()
     msg["Subject"] = f"WEB APP - New Issue: {issue}"
     msg["From"] = EMAIL_USER
-    msg["To"] = ", ".join([EMAIL_USER,EMAIL_USER2])
+    msg["To"] = ", ".join([EMAIL_USER,EMAIL_USER2, email])
     msg.set_content(f"""
 New Issue Created:
 
