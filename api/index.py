@@ -108,39 +108,35 @@ def submit():
         if phone != '':
             phone = '+' + phone
 
-
         # TODO: deal with file uploads
         file_url = None
         try:
             file_url = handle_file_upload(file)
         except Exception as e:
             return render_template("errorpage.html", error_message=str(e)), 400
-        
-        # if file:
-        #     upload_result = cloudinary.uploader.upload(
-        #         file,
-        #         resource_type="auto",
-        #         type="upload"
-        #     )
-        #     file_url = upload_result.get("url")
 
-        # save to database
-        mongo.db.users.insert_one({
-            'name': name,
-            'email': email,
-            'phone': phone,
-            'issue': issue,
-            'description':description,
-            'file': file_url
-        })
     
     # Email notification
-    send_email_notif(name, email, phone, issue, description, file_url)
+        try:
+            # save to database
+            mongo.db.users.insert_one({
+                'name': name,
+                'email': email,
+                'phone': phone,
+                'issue': issue,
+                'description':description,
+                'file': file_url
+            })
+            # Email notification
+            send_email_notif(name, email, phone, issue, description, file_url)
+        except Exception as e:
+            print(f"Error saving to database or sending email: {e}")
+            return "Something went wrong", 500
 
     print(f"Received name: {name}")
     print(cloudinary.config().cloud_name)
     print(file_url)
-    return render_template('submitpage.html', name=name)
+    return render_template("success.html", name=name)
 
 if __name__ == '__main__':
     app.run(debug=True)
