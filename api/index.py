@@ -109,7 +109,6 @@ def submit():
             phone = '+' + phone
 
         # TODO: deal with file uploads
-
         file_url = None
         try:
             file_url = handle_file_upload(file)
@@ -132,12 +131,11 @@ def submit():
             send_email_notif(name, email, phone, issue, description, file_url)
         except Exception as e:
             print(f"Error saving to database or sending email: {e}")
-            return "Something went wrong", 500
+            return render_template("errorpage.html", error_message="Something went wrong"), 500
 
     print(f"Received name: {name}")
     print(cloudinary.config().cloud_name)
     print(file_url)
-    
     return render_template("success.html", name=name)
 
 if __name__ == '__main__':

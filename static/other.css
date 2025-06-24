@@ -1,0 +1,31 @@
+html{
+  font-size: 16px;
+}
+
+body {
+  background-color: #F6EDB8;
+}
+
+#main {
+    background-color:#FFF9E3;
+}
+
+.custom-btn {
+  background-color: #ffc107;
+  color: #000;
+  border: 2px solid #ffc107;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.custom-btn:hover {
+  background-color: #c99a0b;
+  text-decoration: none;
+  color: black;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px #ffc107;
+}
