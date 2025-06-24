@@ -3,20 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <title>Error</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="/static/feedback.css" />
+        <link rel="stylesheet" href="/static/other.css" />
     </head>
-    <body>
-        <div class="error-wrapper">
-            <div class="error-container  d-flex flex-column justify-content-center align-items-center">
-                <h1><i class="bi bi-exclamation-triangle-fill"></i> Oops!</h1>
-                <p>{{ error_message }}</p>
-                <a href="/" class="custom-btn">Back to Feedback Form</a>
-            </div>
-        </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.js"></script>
-    
+    <body style="margin: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+        <section id="main" class="text-center py-5">
+            <h1 class="fw-bold text-dark">
+                <i class="bi bi-exclamation-triangle-fill text-warning"></i> 
+                <br> Oops!
+            </h1>
+            <h3 class="text-secondary mt-3">
+                {{ error_message }}
+            </h3>
+            <a href="/" class="btn custom-btn mt-3">Return to Form</a>
+        </section>
     </body>
 
 </html>
