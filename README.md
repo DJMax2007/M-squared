@@ -19,8 +19,9 @@ A lightweight Flask web app that allows users to submit support issues, upload f
 ---
 
 ## 🗂️ Project Picture
-<img width="436" alt="Screenshot 2025-06-23 at 6 47 41 PM" src="https://github.com/user-attachments/assets/a985cafb-fa03-4d30-bc0f-0b964bf1e2b5" />
+<img width="436" alt="Picture of form" src="https://github.com/user-attachments/assets/a985cafb-fa03-4d30-bc0f-0b964bf1e2b5" />
 
+<img width="550" alt="Picture of submission of confirmation" src="https://github.com/user-attachments/assets/8e9c4696-e86f-43ad-92a8-be12ac7a0868" />
 
 ---
 
