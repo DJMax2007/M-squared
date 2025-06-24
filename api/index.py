@@ -77,7 +77,7 @@ def handle_file_upload(file):
     file.seek(0, os.SEEK_END)
     size_mb = file.tell() / (1024 * 1024)
     file.seek(0)
-    if size_mb > 10:
+    if size_mb > 5:
         raise ValueError(f"{filename} file too large (max 10MB)")
 
     resource_type = "raw" if ext == '.pdf' else "image"
@@ -139,4 +139,4 @@ def submit():
     return render_template("success.html", name=name)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) # app.run(add debug = True) when developing
