@@ -64,22 +64,26 @@ def submit():
         if phone != '':
             phone = '+' + phone
 
-
         # TODO: deal with file uploads
-
+        
+        try:
         # save to databse
-        mongo.db.users.insert_one({
-            'name': name,
-            'email': email,
-            'phone': phone,
-            'issue': issue,
-            'description':description
-        })
-    
-    # Email notification
-    send_email_notif(name, email, phone, issue, description)
+            mongo.db.users.insert_one({
+                'name': name,
+                'email': email,
+                'phone': phone,
+                'issue': issue,
+                'description':description
+            })
+            # Email notification
+            send_email_notif(name, email, phone, issue, description)
+        except Exception as e:
+            print(f"Error saving to database or sending email: {e}")
+            return "Something went wrong", 500
+
 
     print(f"Received name: {name}")
+    return render_template("success.html", name=name)
     return f" Hi {name}, your feedback has been submitted!"
 
 if __name__ == '__main__':
