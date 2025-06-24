@@ -65,7 +65,14 @@ def submit():
             phone = '+' + phone
 
         # TODO: deal with file uploads
-        
+        file_url = None
+        try:
+            file_url = handle_file_upload(file)
+        except Exception as e:
+            return render_template("errorpage.html", error_message=str(e)), 400
+
+    
+    # Email notification
         try:
         # save to databse
             mongo.db.users.insert_one({
@@ -83,6 +90,8 @@ def submit():
 
 
     print(f"Received name: {name}")
+    print(cloudinary.config().cloud_name)
+    print(file_url)
     return render_template("success.html", name=name)
 
 if __name__ == '__main__':
