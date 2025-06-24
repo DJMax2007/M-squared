@@ -20,7 +20,7 @@
     <section id="content">
       <div class="container-fluid justify-content-center d-flex align-items-center">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 px-2">
-          <form id="myForm" action="/submit" method="post">
+          <form id="myForm" action="/submit" method="post" enctype="multipart/form-data">
 
             <label for="name" class="form-label pt-3">
               Name: <span class="text-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Required">*</span> 
@@ -91,7 +91,7 @@
             <div class="mb-4">
               <label for="upload"><span class="form-label">Upload Support Documents:</span></label>
               <div class="d-flex input-group">
-                <input class="form-control" type="file" name="upload">
+                <input class="form-control" type="file" name="upload" accept=".jpg,.jpeg,.png,.gif,.pdf">
                 <span class="input-group-text info bg-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Upload a file relevant to the issue.">
                   <i class="bi bi-question-circle-fill"></i>
                 </span>
@@ -161,6 +161,19 @@
         console.log('Confirm button clicked!');
         modal.hide();
         form.submit(); 
+      });
+
+      form.upload.addEventListener('change', function () {
+        const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.pdf'];
+        const file = this.files[0];
+
+        if (file) {
+          const fileExt = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
+          if (!allowedExtensions.includes(fileExt)) {
+            alert("Unsupported file type. Please upload a JPG, PNG, GIF, or PDF.");
+            this.value = ""; 
+          }
+        }
       });
     </script>
   
