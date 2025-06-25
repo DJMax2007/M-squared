@@ -12,3 +12,4 @@ venv/
 .flaskenv
 
 __pycache__/
+.vercel
