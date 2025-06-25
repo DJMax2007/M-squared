@@ -77,8 +77,8 @@ def handle_file_upload(file):
     file.seek(0, os.SEEK_END)
     size_mb = file.tell() / (1024 * 1024)
     file.seek(0)
-    if size_mb > 5:
-        raise ValueError(f"{filename} file too large (max 10MB)")
+    if size_mb > 2:
+        raise ValueError(f"{filename} file too large (max 2MB)")
 
     resource_type = "raw" if ext == '.pdf' else "image"
 
